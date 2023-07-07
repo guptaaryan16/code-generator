@@ -83,7 +83,7 @@ jobs:
 
       - name: 'pnpm test:ci : ${{ matrix.template }} ${{ matrix.test }}'
         run: |
-          pnpm test:ci \"${{ matrix.template }} ${{ matrix.test }}\"
+          pnpm test:ci" --testNamePattern="${{ matrix.template }} ${{ matrix.test }}"
 
       - run: sh ./scripts/run_tests.sh unzip
       - run: pnpm lint
