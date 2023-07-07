@@ -83,7 +83,7 @@ jobs:
 
       - name: 'pnpm test:ci : ${{ matrix.template }} ${{ matrix.test }}'
         run: |
-          pnpm test:ci --testNamePattern="${{ matrix.template }} ${{ matrix.test }}"
+          pnpm start-server-and-test --expect 200 serve http://127.0.0.1:5000 && jest --color --testNamePattern='${{ matrix.template }} ${{ matrix.test }}'
 
       - run: sh ./scripts/run_tests.sh unzip
       - run: pnpm lint
