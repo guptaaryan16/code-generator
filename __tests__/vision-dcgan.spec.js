@@ -33,6 +33,7 @@ test('vision dcgan simple', async () => {
   await page.click('text=config.yaml')
 
   await page.getByRole('button', { name: 'terminal Code' }).click()
+  await page.waitForTimeout(1000)
   await page.getByRole('button', { name: 'Download Zip' }).click()
   const downloadPromise = await page.waitForEvent('download')
   const download = await downloadPromise
@@ -86,6 +87,7 @@ test('vision dcgan all', async () => {
   await page.click('text=config.yaml')
 
   await page.getByRole('button', { name: 'terminal Code' }).click()
+  await page.waitForTimeout(1000)
   await page.getByRole('button', { name: 'Download Zip' }).click()
   const downloadPromise = await page.waitForEvent('download')
   const download = await downloadPromise
@@ -108,6 +110,7 @@ test('vision dcgan launch', async () => {
   await page.click('text=config.yaml')
 
   await page.getByRole('button', { name: 'terminal Code' }).click()
+  await page.waitForTimeout(1000)
   await page.getByRole('button', { name: 'Download Zip' }).click()
   const downloadPromise = await page.waitForEvent('download')
   const download = await downloadPromise
@@ -131,6 +134,7 @@ test('vision dcgan spawn', async () => {
   await page.click('text=config.yaml')
 
   await page.getByRole('button', { name: 'terminal Code' }).click()
+  await page.waitForTimeout(1000)
   await page.getByRole('button', { name: 'Download Zip' }).click()
   const downloadPromise = await page.waitForEvent('download')
   const download = await downloadPromise
