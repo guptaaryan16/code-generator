@@ -33,7 +33,7 @@ test('text classification simple', async () => {
   await page.click('text=config.yaml')
 
   await page.getByRole('button', { name: 'terminal Code' }).click()
-  await page.waitForTimeout(1000)
+  await page.waitForTimeout(2000)
   await page.getByRole('button', { name: 'Download Zip' }).click()
   const downloadPromise = await page.waitForEvent('download')
   const download = await downloadPromise
@@ -87,7 +87,7 @@ test('text classification all', async () => {
   await page.click('text=config.yaml')
 
   await page.getByRole('button', { name: 'terminal Code' }).click()
-  await page.waitForTimeout(1000)
+  await page.waitForTimeout(2000)
   await page.getByRole('button', { name: 'Download Zip' }).click()
   const downloadPromise = await page.waitForEvent('download')
   const download = await downloadPromise
@@ -110,7 +110,7 @@ test('text classification launch', async () => {
   await page.click('text=config.yaml')
 
   await page.getByRole('button', { name: 'terminal Code' }).click()
-  await page.waitForTimeout(1000)
+  await page.waitForTimeout(2000)
   await page.getByRole('button', { name: 'Download Zip' }).click()
   const downloadPromise = await page.waitForEvent('download')
   const download = await downloadPromise
@@ -134,7 +134,7 @@ test('text classification spawn', async () => {
   await page.click('text=config.yaml')
 
   await page.getByRole('button', { name: 'terminal Code' }).click()
-  await page.waitForTimeout(1000)
+  await page.waitForTimeout(2000)
   await page.getByRole('button', { name: 'Download Zip' }).click()
   const downloadPromise = await page.waitForEvent('download')
   const download = await downloadPromise
