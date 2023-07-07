@@ -24,7 +24,7 @@ afterEach(async () => {
   await context.close()
 })
 
-test('text classification simple', async () => {
+test('text-classification simple', async () => {
   await page.selectOption('select', 'template-text-classification')
 
   await page.waitForSelector('text=README.md')
@@ -41,7 +41,7 @@ test('text classification simple', async () => {
   await download.saveAs('./dist-tests/text-classification-simple.zip')
 })
 
-test('text classification all', async () => {
+test('text-classification all', async () => {
   await page.selectOption('select', 'template-text-classification')
 
   await page.check('#include_test-checkbox')
@@ -95,7 +95,7 @@ test('text classification all', async () => {
   await download.saveAs('./dist-tests/text-classification-all.zip')
 })
 
-test('text classification launch', async () => {
+test('text-classification launch', async () => {
   await page.selectOption('select', 'template-text-classification')
 
   await page.waitForSelector('text=README.md')
@@ -118,7 +118,7 @@ test('text classification launch', async () => {
   await download.saveAs('./dist-tests/text-classification-launch.zip')
 })
 
-test('text classification spawn', async () => {
+test('text-classification spawn', async () => {
   await page.selectOption('select', 'template-text-classification')
 
   await page.waitForSelector('text=README.md')

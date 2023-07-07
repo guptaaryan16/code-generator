@@ -24,7 +24,7 @@ afterEach(async () => {
   await context.close()
 })
 
-test('vision segmentation simple', async () => {
+test('vision-segmentation simple', async () => {
   await page.selectOption('select', 'template-vision-segmentation')
 
   await page.waitForSelector('text=README.md')
@@ -41,7 +41,7 @@ test('vision segmentation simple', async () => {
   await download.saveAs('./dist-tests/vision-segmentation-simple.zip')
 })
 
-test('vision segmentation all', async () => {
+test('vision-segmentation all', async () => {
   await page.selectOption('select', 'template-vision-segmentation')
 
   await page.check('#include_test-checkbox')
@@ -95,7 +95,7 @@ test('vision segmentation all', async () => {
   await download.saveAs('./dist-tests/vision-segmentation-all.zip')
 })
 
-test('vision segmentation launch', async () => {
+test('vision-segmentation launch', async () => {
   await page.selectOption('select', 'template-vision-segmentation')
 
   await page.waitForSelector('text=README.md')
@@ -118,7 +118,7 @@ test('vision segmentation launch', async () => {
   await download.saveAs('./dist-tests/vision-segmentation-launch.zip')
 })
 
-test('vision segmentation spawn', async () => {
+test('vision-segmentation spawn', async () => {
   await page.selectOption('select', 'template-vision-segmentation')
 
   await page.waitForSelector('text=README.md')

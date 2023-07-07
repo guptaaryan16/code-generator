@@ -24,7 +24,7 @@ afterEach(async () => {
   await context.close()
 })
 
-test('vision dcgan simple', async () => {
+test('vision-dcgan simple', async () => {
   await page.selectOption('select', 'template-vision-dcgan')
 
   await page.waitForSelector('text=README.md')
@@ -41,7 +41,7 @@ test('vision dcgan simple', async () => {
   await download.saveAs('./dist-tests/vision-dcgan-simple.zip')
 })
 
-test('vision dcgan all', async () => {
+test('vision-dcgan all', async () => {
   await page.selectOption('select', 'template-vision-dcgan')
 
   await page.check('#include_test-checkbox')
@@ -95,7 +95,7 @@ test('vision dcgan all', async () => {
   await download.saveAs('./dist-tests/vision-dcgan-all.zip')
 })
 
-test('vision dcgan launch', async () => {
+test('vision-dcgan launch', async () => {
   await page.selectOption('select', 'template-vision-dcgan')
 
   await page.waitForSelector('text=README.md')
@@ -118,7 +118,7 @@ test('vision dcgan launch', async () => {
   await download.saveAs('./dist-tests/vision-dcgan-launch.zip')
 })
 
-test('vision dcgan spawn', async () => {
+test('vision-dcgan spawn', async () => {
   await page.selectOption('select', 'template-vision-dcgan')
 
   await page.waitForSelector('text=README.md')

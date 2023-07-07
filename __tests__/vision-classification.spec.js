@@ -24,7 +24,7 @@ afterEach(async () => {
   await context.close()
 })
 
-test('vision classification simple', async () => {
+test('vision-classification simple', async () => {
   await page.selectOption('select', 'template-vision-classification')
 
   await page.waitForSelector('text=README.md')
@@ -41,7 +41,7 @@ test('vision classification simple', async () => {
   await download.saveAs('./dist-tests/vision-classification-simple.zip')
 })
 
-test('vision classification all', async () => {
+test('vision-classification all', async () => {
   await page.selectOption('select', 'template-vision-classification')
 
   await page.check('#include_test-checkbox')
@@ -95,7 +95,7 @@ test('vision classification all', async () => {
   await download.saveAs('./dist-tests/vision-classification-all.zip')
 })
 
-test('vision classification launch', async () => {
+test('vision-classification launch', async () => {
   await page.selectOption('select', 'template-vision-classification')
 
   await page.waitForSelector('text=README.md')
@@ -118,7 +118,7 @@ test('vision classification launch', async () => {
   await download.saveAs('./dist-tests/vision-classification-launch.zip')
 })
 
-test('vision classification spawn', async () => {
+test('vision-classification spawn', async () => {
   await page.selectOption('select', 'template-vision-classification')
 
   await page.waitForSelector('text=README.md')
