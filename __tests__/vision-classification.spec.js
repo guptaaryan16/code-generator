@@ -26,13 +26,13 @@ afterEach(async () => {
 
 test('vision-classification simple', async () => {
   await page.selectOption('select', 'template-vision-classification')
+  await page.waitForTimeout(2000)
 
   await page.waitForSelector('text=README.md')
 
   await page.click('text=Loggers')
   await page.click('text=config.yaml')
 
-  await page.waitForTimeout(2000)
   await page.getByRole('button', { name: 'terminal Code' }).click()
   await page.getByRole('button', { name: 'Download Zip' }).click()
   const downloadPromise = await page.waitForEvent('download')
@@ -46,6 +46,7 @@ test('vision-classification all', async () => {
 
   await page.check('#include_test-checkbox')
   expect(await page.isChecked('#include_test-checkbox')).toBeTruthy()
+  await page.waitForTimeout(2000)
 
   await page.waitForSelector('text=README.md')
   await page.click('text=Training')
@@ -86,7 +87,6 @@ test('vision-classification all', async () => {
   await page.click('text=Loggers')
   await page.click('text=config.yaml')
 
-  await page.waitForTimeout(2000)
   await page.getByRole('button', { name: 'terminal Code' }).click()
   await page.getByRole('button', { name: 'Download Zip' }).click()
   const downloadPromise = await page.waitForEvent('download')
@@ -97,6 +97,7 @@ test('vision-classification all', async () => {
 
 test('vision-classification launch', async () => {
   await page.selectOption('select', 'template-vision-classification')
+  await page.waitForTimeout(2000)
 
   await page.waitForSelector('text=README.md')
   await page.click('text=Training')
@@ -109,7 +110,6 @@ test('vision-classification launch', async () => {
   await page.click('text=Loggers')
   await page.click('text=config.yaml')
 
-  await page.waitForTimeout(2000)
   await page.getByRole('button', { name: 'terminal Code' }).click()
   await page.getByRole('button', { name: 'Download Zip' }).click()
   const downloadPromise = await page.waitForEvent('download')
@@ -120,6 +120,7 @@ test('vision-classification launch', async () => {
 
 test('vision-classification spawn', async () => {
   await page.selectOption('select', 'template-vision-classification')
+  await page.waitForTimeout(2000)
 
   await page.waitForSelector('text=README.md')
   await page.click('text=Training')
@@ -133,7 +134,6 @@ test('vision-classification spawn', async () => {
   await page.click('text=Loggers')
   await page.click('text=config.yaml')
 
-  await page.waitForTimeout(2000)
   await page.getByRole('button', { name: 'terminal Code' }).click()
   await page.getByRole('button', { name: 'Download Zip' }).click()
   const downloadPromise = await page.waitForEvent('download')
