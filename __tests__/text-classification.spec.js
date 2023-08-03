@@ -31,7 +31,7 @@ test('text classification simple', async () => {
 
   await page.click('text=Loggers')
   await page.click('text=config.yaml')
-  
+
   await page.getByRole('button', { name: 'Code' }).click()
   await page.getByRole('button', { name: 'Download Zip' }).click()
   const downloadPromise = await page
