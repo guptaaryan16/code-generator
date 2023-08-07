@@ -38,9 +38,9 @@ test('vision classification simple', async () => {
 
   const downloadPromise = await page
     .waitForEvent('download', { timeout: 3000 })
-    .catch(() => {
-      codeButton.hover();  
-      page.getByRole('button', { name: 'Download Zip' }).click()
+    .catch(async () => {
+      await codeButton.hover()
+      await page.getByRole('button', { name: 'Download Zip' }).click()
       return page.waitForEvent('download', { timeout: 3000 })
     })
 
@@ -98,9 +98,9 @@ test('vision classification all', async () => {
 
   const downloadPromise = await page
     .waitForEvent('download', { timeout: 3000 })
-    .catch(() => {
-      codeButton.hover();  
-      page.getByRole('button', { name: 'Download Zip' }).click()
+    .catch(async () => {
+      await codeButton.hover()
+      await page.getByRole('button', { name: 'Download Zip' }).click()
       return page.waitForEvent('download', { timeout: 3000 })
     })
   await downloadPromise.saveAs('./dist-tests/vision-classification-all.zip')
@@ -126,9 +126,9 @@ test('vision classification launch', async () => {
 
   const downloadPromise = await page
     .waitForEvent('download', { timeout: 3000 })
-    .catch(() => {
-      codeButton.hover();  
-      page.getByRole('button', { name: 'Download Zip' }).click()
+    .catch(async () => {
+      await codeButton.hover()
+      await page.getByRole('button', { name: 'Download Zip' }).click()
       return page.waitForEvent('download', { timeout: 3000 })
     })
   await downloadPromise.saveAs('./dist-tests/vision-classification-launch.zip')
@@ -155,9 +155,9 @@ test('vision classification spawn', async () => {
 
   const downloadPromise = await page
     .waitForEvent('download', { timeout: 3000 })
-    .catch(() => {
-      codeButton.hover();  
-      page.getByRole('button', { name: 'Download Zip' }).click()
+    .catch(async () => {
+      await codeButton.hover()
+      await page.getByRole('button', { name: 'Download Zip' }).click()
       return page.waitForEvent('download', { timeout: 3000 })
     })
 
