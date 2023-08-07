@@ -39,12 +39,12 @@ test('vision classification simple', async () => {
   const downloadPromise = await page
     .waitForEvent('download', { timeout: 3000 })
     .catch(async () => {
-      await codeButton.hover()
+      await page.getByRole('button', { name: 'Code' }).hover()
       await page.getByRole('button', { name: 'Download Zip' }).click()
       return page.waitForEvent('download', { timeout: 3000 })
     })
     .catch(async () => {
-      await codeButton.hover()
+      await page.getByRole('button', { name: 'Code' }).hover()
       await page.getByRole('button', { name: 'Download Zip' }).click()
       return page.waitForEvent('download', { timeout: 3000 })
     })
@@ -104,12 +104,12 @@ test('vision classification all', async () => {
   const downloadPromise = await page
     .waitForEvent('download', { timeout: 3000 })
     .catch(async () => {
-      await codeButton.hover()
+      await page.getByRole('button', { name: 'Code' }).hover()
       await page.getByRole('button', { name: 'Download Zip' }).click()
       return page.waitForEvent('download', { timeout: 3000 })
     })
     .catch(async () => {
-      await codeButton.hover()
+      await page.getByRole('button', { name: 'Code' }).hover()
       await page.getByRole('button', { name: 'Download Zip' }).click()
       return page.waitForEvent('download', { timeout: 3000 })
     })
@@ -137,12 +137,12 @@ test('vision classification launch', async () => {
   const downloadPromise = await page
     .waitForEvent('download', { timeout: 3000 })
     .catch(async () => {
-      await codeButton.hover()
+      await page.getByRole('button', { name: 'Code' }).hover()
       await page.getByRole('button', { name: 'Download Zip' }).click()
       return page.waitForEvent('download', { timeout: 3000 })
     })
     .catch(async () => {
-      await codeButton.hover()
+      await page.getByRole('button', { name: 'Code' }).hover()
       await page.getByRole('button', { name: 'Download Zip' }).click()
       return page.waitForEvent('download', { timeout: 3000 })
     })
@@ -171,12 +171,12 @@ test('vision classification spawn', async () => {
   const downloadPromise = await page
     .waitForEvent('download', { timeout: 3000 })
     .catch(async () => {
-      await codeButton.hover()
+      await page.getByRole('button', { name: 'Code' }).hover()
       await page.getByRole('button', { name: 'Download Zip' }).click()
       return page.waitForEvent('download', { timeout: 3000 })
     })
     .catch(async () => {
-      await codeButton.hover()
+      await page.getByRole('button', { name: 'Code' }).hover()
       await page.getByRole('button', { name: 'Download Zip' }).click()
       return page.waitForEvent('download', { timeout: 3000 })
     })
