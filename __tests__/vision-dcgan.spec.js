@@ -24,6 +24,21 @@ afterEach(async () => {
   await context.close()
 })
 
+async function downloadWithRetries(page, maxRetries = 10) {
+  for (let retry = 0; retry < maxRetries; retry++) {
+    try {
+      const codeButton = await page.getByRole('button', { name: 'Code' });
+      await codeButton.hover();
+      const downloadZipButton = await page.getByRole('button', { name: 'Download Zip' });
+      await downloadZipButton.click();
+      return await page.waitForEvent('download', { timeout: 2000 })
+    } catch (error) {
+      console.error(`Attempt ${retry + 1} failed: ${error}`);
+    }
+  }
+  throw new Error(`Failed to download after ${maxRetries} retries.`);
+}
+
 test('vision dcgan simple', async () => {
   await page.selectOption('select', 'template-vision-dcgan')
 
@@ -32,22 +47,8 @@ test('vision dcgan simple', async () => {
   await page.click('text=Loggers')
   await page.click('text=config.yaml')
 
-  const codeButton = await page.getByRole('button', { name: 'Code' })
-  await codeButton.hover()
-  await page.getByRole('button', { name: 'Download Zip' }).click()
+  const downloadPromise = await downloadWithRetries(page)
 
-  const downloadPromise = await page
-    .waitForEvent('download', { timeout: 3000 })
-    .catch(async () => {
-      await page.getByRole('button', { name: 'Code' }).hover()
-      await page.getByRole('button', { name: 'Download Zip' }).click()
-      return page.waitForEvent('download', { timeout: 3000 })
-    })
-    .catch(async () => {
-      await page.getByRole('button', { name: 'Code' }).hover()
-      await page.getByRole('button', { name: 'Download Zip' }).click()
-      return page.waitForEvent('download', { timeout: 3000 })
-    })
   await downloadPromise.saveAs('./dist-tests/vision-dcgan-simple.zip')
 })
 
@@ -96,22 +97,8 @@ test('vision dcgan all', async () => {
   await page.click('text=Loggers')
   await page.click('text=config.yaml')
 
-  const codeButton = await page.getByRole('button', { name: 'Code' })
-  await codeButton.hover()
-  await page.getByRole('button', { name: 'Download Zip' }).click()
+  const downloadPromise = await downloadWithRetries(page)
 
-  const downloadPromise = await page
-    .waitForEvent('download', { timeout: 3000 })
-    .catch(async () => {
-      await page.getByRole('button', { name: 'Code' }).hover()
-      await page.getByRole('button', { name: 'Download Zip' }).click()
-      return page.waitForEvent('download', { timeout: 3000 })
-    })
-    .catch(async () => {
-      await page.getByRole('button', { name: 'Code' }).hover()
-      await page.getByRole('button', { name: 'Download Zip' }).click()
-      return page.waitForEvent('download', { timeout: 3000 })
-    })
   await downloadPromise.saveAs('./dist-tests/vision-dcgan-all.zip')
 })
 
@@ -129,22 +116,8 @@ test('vision dcgan launch', async () => {
   await page.click('text=Loggers')
   await page.click('text=config.yaml')
 
-  const codeButton = await page.getByRole('button', { name: 'Code' })
-  await codeButton.hover()
-  await page.getByRole('button', { name: 'Download Zip' }).click()
+  const downloadPromise = await downloadWithRetries(page)
 
-  const downloadPromise = await page
-    .waitForEvent('download', { timeout: 3000 })
-    .catch(async () => {
-      await page.getByRole('button', { name: 'Code' }).hover()
-      await page.getByRole('button', { name: 'Download Zip' }).click()
-      return page.waitForEvent('download', { timeout: 3000 })
-    })
-    .catch(async () => {
-      await page.getByRole('button', { name: 'Code' }).hover()
-      await page.getByRole('button', { name: 'Download Zip' }).click()
-      return page.waitForEvent('download', { timeout: 3000 })
-    })
   await downloadPromise.saveAs('./dist-tests/vision-dcgan-launch.zip')
 })
 
@@ -163,21 +136,7 @@ test('vision dcgan spawn', async () => {
   await page.click('text=Loggers')
   await page.click('text=config.yaml')
 
-  const codeButton = await page.getByRole('button', { name: 'Code' })
-  await codeButton.hover()
-  await page.getByRole('button', { name: 'Download Zip' }).click()
+  const downloadPromise = await downloadWithRetries(page)
 
-  const downloadPromise = await page
-    .waitForEvent('download', { timeout: 3000 })
-    .catch(async () => {
-      await page.getByRole('button', { name: 'Code' }).hover()
-      await page.getByRole('button', { name: 'Download Zip' }).click()
-      return page.waitForEvent('download', { timeout: 3000 })
-    })
-    .catch(async () => {
-      await page.getByRole('button', { name: 'Code' }).hover()
-      await page.getByRole('button', { name: 'Download Zip' }).click()
-      return page.waitForEvent('download', { timeout: 3000 })
-    })
   await downloadPromise.saveAs('./dist-tests/vision-dcgan-spawn.zip')
 })
