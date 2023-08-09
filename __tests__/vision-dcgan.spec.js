@@ -42,17 +42,7 @@ test('vision dcgan simple', async () => {
   const downloadPromise = await page
     .waitForEvent('download', { timeout: 2000 })
     .catch(async () => {
-      await page.getByRole('button', { name: 'Code' }).click()
-      await page
-        .getByText(
-          'Generate Linkcontent_copy Copied!Use wget or paste the link in your browser.Down'
-        )
-        .hover()
-      await page.getByRole('button', { name: 'Download Zip' }).click()
-      return page.waitForEvent('download', { timeout: 2000 })
-    })
-    .catch(async () => {
-      await page.getByRole('button', { name: 'Code' }).click()
+      page.getByRole('button', { name: 'Code' }).click()
       await page
         .getByText(
           'Generate Linkcontent_copy Copied!Use wget or paste the link in your browser.Down'
@@ -119,17 +109,7 @@ test('vision dcgan all', async () => {
   const downloadPromise = await page
     .waitForEvent('download', { timeout: 2000 })
     .catch(async () => {
-      await page.getByRole('button', { name: 'Code' }).click()
-      await page
-        .getByText(
-          'Generate Linkcontent_copy Copied!Use wget or paste the link in your browser.Down'
-        )
-        .hover()
-      await page.getByRole('button', { name: 'Download Zip' }).click()
-      return page.waitForEvent('download', { timeout: 2000 })
-    })
-    .catch(async () => {
-      await page.getByRole('button', { name: 'Code' }).click()
+      page.getByRole('button', { name: 'Code' }).click()
       await page
         .getByText(
           'Generate Linkcontent_copy Copied!Use wget or paste the link in your browser.Down'
@@ -166,17 +146,7 @@ test('vision dcgan launch', async () => {
   const downloadPromise = await page
     .waitForEvent('download', { timeout: 2000 })
     .catch(async () => {
-      await page.getByRole('button', { name: 'Code' }).click()
-      await page
-        .getByText(
-          'Generate Linkcontent_copy Copied!Use wget or paste the link in your browser.Down'
-        )
-        .hover()
-      await page.getByRole('button', { name: 'Download Zip' }).click()
-      return page.waitForEvent('download', { timeout: 2000 })
-    })
-    .catch(async () => {
-      await page.getByRole('button', { name: 'Code' }).click()
+      page.getByRole('button', { name: 'Code' }).click()
       await page
         .getByText(
           'Generate Linkcontent_copy Copied!Use wget or paste the link in your browser.Down'
@@ -213,17 +183,7 @@ test('vision dcgan spawn', async () => {
   const downloadPromise = await page
     .waitForEvent('download', { timeout: 2000 })
     .catch(async () => {
-      await page.getByRole('button', { name: 'Code' }).click()
-      await page
-        .getByText(
-          'Generate Linkcontent_copy Copied!Use wget or paste the link in your browser.Down'
-        )
-        .hover()
-      await page.getByRole('button', { name: 'Download Zip' }).click()
-      return page.waitForEvent('download', { timeout: 2000 })
-    })
-    .catch(async () => {
-      await page.getByRole('button', { name: 'Code' }).click()
+      page.getByRole('button', { name: 'Code' }).click()
       await page
         .getByText(
           'Generate Linkcontent_copy Copied!Use wget or paste the link in your browser.Down'
